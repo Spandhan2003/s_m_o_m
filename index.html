@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="theme-color" content="#12060c"/>
+
+<title>Happy Mother’s Day 🌷</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+    height:100vh;
+    touch-action:manipulation;
+    position:relative;
+    background:
+    radial-gradient(circle at top left, #3d1f2b 0%, #12060c 45%, #000 100%);
+    color:white;
+}
+
+/* Luxury shimmer */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(
+        120deg,
+        transparent 20%,
+        rgba(255,255,255,0.03) 40%,
+        transparent 60%
+    );
+    animation:shine 10s linear infinite;
+    pointer-events:none;
+}
+
+/* Floral texture */
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image:
+    radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size:30px 30px;
+    pointer-events:none;
+}
+
+@keyframes shine{
+    from{transform:translateX(-100%);}
+    to{transform:translateX(100%);}
+}
+
+.overlay-bg{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,0.35);
+    z-index:0;
+}
+
+/* Soft glow */
+.lux-glow{
+    position:absolute;
+    width:320px;
+    height:320px;
+    background:
+    radial-gradient(circle,
+    rgba(244,182,194,0.12),
+    transparent 70%);
+    border-radius:50%;
+    animation:moveGlow 20s linear infinite alternate;
+    z-index:0;
+}
+
+@keyframes moveGlow{
+    0%{transform:translate(0,0);}
+    100%{transform:translate(220px,160px);}
+}
+
+/* Floating items */
+.float{
+    position:absolute;
+    pointer-events:none;
+    z-index:1;
+    opacity:0.75;
+    filter:drop-shadow(0 0 8px #f4b6c2) blur(0.3px);
+    animation:floaty linear infinite;
+}
+
+@keyframes floaty{
+    0%{
+        transform:translateY(100vh) rotate(0deg);
+        opacity:0;
+    }
+    10%{opacity:1;}
+    100%{
+        transform:translateY(-10vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+.page{
+    position:absolute;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+    z-index:2;
+}
+
+.cover{
+    transition:opacity 1s ease;
+}
+
+.main{
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:scale(0.95);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.question{
+    font-family:'Pacifico', cursive;
+    font-size:2.1rem;
+    line-height:1.4em;
+    color:#fff;
+    white-space:pre-wrap;
+    text-shadow:
+    0 0 15px #d96c8a,
+    0 0 30px #c08497;
+}
+
+.blink{
+    border-right:3px solid white;
+    animation:blink .8s step-end infinite;
+}
+
+@keyframes blink{
+    50%{
+        border-color:transparent;
+    }
+}
+
+.sub{
+    margin-top:15px;
+    color:#ffeef2;
+    opacity:0.9;
+    font-size:0.95rem;
+}
+
+button{
+    margin-top:28px;
+    padding:12px 28px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(135deg,#d96c8a,#c08497);
+    color:white;
+    font-weight:bold;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.35s;
+    box-shadow:0 0 25px rgba(244,182,194,0.45);
+}
+
+button:hover{
+    transform:scale(1.07);
+    box-shadow:0 0 35px rgba(244,182,194,0.7);
+}
+
+.hidden{
+    display:none;
+}
+
+h2{
+    font-size:2rem;
+    color:#fff;
+    text-shadow:0 0 18px #d96c8a;
+}
+
+/* Mirror */
+.mirror{
+    width:260px;
+    height:320px;
+    margin:22px 0;
+    border-radius:28px;
+    padding:6px;
+    background:
+    linear-gradient(
+        145deg,
+        #fff6f8,
+        #f8d7df,
+        #fff6f8
+    );
+    box-shadow:
+    0 0 35px rgba(255,214,224,0.45),
+    0 0 60px rgba(192,132,151,0.3);
+}
+
+.video-wrap{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    border-radius:22px;
+    background:black;
+}
+
+video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:scaleX(-1);
+}
+
+/* Crown */
+.crown{
+    font-size:42px;
+    filter:drop-shadow(0 0 10px gold);
+    animation:floatCrown 2.2s ease-in-out infinite;
+}
+
+@keyframes floatCrown{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0);}
+}
+
+.you{
+    font-size:30px;
+    font-weight:700;
+    margin-top:8px;
+    color:white;
+    text-shadow:0 0 20px #d96c8a;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.06);}
+    100%{transform:scale(1);}
+}
+
+.message{
+    margin-top:10px;
+    color:#ffeef2;
+    font-size:1rem;
+    max-width:320px;
+    line-height:1.6em;
+}
+
+.quote{
+    margin-top:16px;
+    font-style:italic;
+    color:#ffeef2;
+    opacity:0.9;
+    font-size:0.95rem;
+}
+
+/* Twinkles */
+.twinkle{
+    position:absolute;
+    font-size:18px;
+    animation:twinkleAnim 1.6s infinite alternate;
+    pointer-events:none;
+}
+
+@keyframes twinkleAnim{
+    from{
+        opacity:0.3;
+        transform:scale(0.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1.2);
+    }
+}
+
+/* Sparkle burst */
+.sparkle{
+    position:absolute;
+    font-size:18px;
+    pointer-events:none;
+    animation:sparkleAnim 1s linear forwards;
+}
+
+@keyframes sparkleAnim{
+    0%{
+        opacity:1;
+        transform:translate(0,0) scale(1);
+    }
+    100%{
+        opacity:0;
+        transform:
+        translate(calc(var(--x)*1px),
+        calc(var(--y)*1px))
+        scale(0);
+    }
+}
+
+@media(max-width:480px){
+    .question{
+        font-size:1.8rem;
+    }
+
+    .mirror{
+        width:230px;
+        height:290px;
+    }
+
+    .you{
+        font-size:26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay-bg"></div>
+
+<div class="lux-glow" style="top:5%; left:5%;"></div>
+<div class="lux-glow" style="bottom:5%; right:5%;"></div>
+
+<!-- Floating elements -->
+<script>
+for(let i=0;i<28;i++){
+    let el=document.createElement("div");
+
+    el.className="float";
+
+    el.innerHTML=[
+        "🌷",
+        "🌸",
+        "✨",
+        "💖",
+        "🦋"
+    ][Math.floor(Math.random()*5)];
+
+    el.style.left=Math.random()*100+"vw";
+    el.style.fontSize=(16+Math.random()*22)+"px";
+    el.style.animationDuration=(9+Math.random()*7)+"s";
+
+    document.body.appendChild(el);
+}
+</script>
+
+<!-- COVER PAGE -->
+<div class="page cover" id="cover">
+
+    <div class="question blink" id="question">
+Behind every smile,
+every dream,
+every strength…
+stands a mother 🌷
+    </div>
+
+    <p class="sub">
+        A little surprise made with love 💖
+    </p>
+
+    <button id="revealBtn">
+        Open Your Surprise 🌸
+    </button>
+
+</div>
+
+<!-- MAIN PAGE -->
+<div class="page main hidden" id="main">
+
+    <h2>Happy Mother’s Day 🌷</h2>
+
+    <div class="mirror">
+
+        <div class="video-wrap">
+            <video id="video" autoplay playsinline></video>
+        </div>
+
+    </div>
+
+    <div class="crown">👑</div>
+
+    <div class="you">
+        MOM 💖
+    </div>
+
+    <p class="message">
+        The heart of our home,  
+        the light in our lives,  
+        and the most beautiful soul 🌸
+    </p>
+
+    <p class="quote">
+        “Home begins with a mother's love.”
+    </p>
+
+    <!-- Twinkles -->
+    <div class="twinkle" style="top:22%; left:45%;">✨</div>
+    <div class="twinkle" style="top:28%; left:56%;">✨</div>
+
+</div>
+
+<script>
+/* Typewriter */
+const questionEl=document.getElementById("question");
+
+const fullText=questionEl.textContent;
+
+questionEl.textContent="";
+
+let i=0;
+
+function typeWriter(){
+
+    if(i<fullText.length){
+
+        questionEl.textContent+=fullText[i];
+
+        i++;
+
+        setTimeout(typeWriter,50);
+    }
+}
+
+typeWriter();
+
+/* Sparkle burst */
+function createSparkle(x,y){
+
+    const sparkle=document.createElement("div");
+
+    sparkle.className="sparkle";
+
+    sparkle.innerHTML=[
+        "✨",
+        "💖",
+        "🌸"
+    ][Math.floor(Math.random()*3)];
+
+    sparkle.style.left=x+"px";
+    sparkle.style.top=y+"px";
+
+    sparkle.style.setProperty(
+        "--x",
+        (Math.random()*120-60)
+    );
+
+    sparkle.style.setProperty(
+        "--y",
+        (Math.random()*-120-60)
+    );
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(()=>{
+        sparkle.remove();
+    },1000);
+}
+
+/* Continuous sparkles */
+function randomSparkles(){
+
+    setInterval(()=>{
+
+        const s=document.createElement("div");
+
+        s.className="sparkle";
+
+        s.innerHTML="✨";
+
+        s.style.left=
+        Math.random()*window.innerWidth+"px";
+
+        s.style.top=
+        Math.random()*window.innerHeight+"px";
+
+        s.style.setProperty(
+            "--x",
+            (Math.random()*80-40)
+        );
+
+        s.style.setProperty(
+            "--y",
+            (Math.random()*-80-40)
+        );
+
+        document.body.appendChild(s);
+
+        setTimeout(()=>{
+            s.remove();
+        },1000);
+
+    },300);
+}
+
+const revealBtn=document.getElementById("revealBtn");
+
+const cover=document.getElementById("cover");
+
+const main=document.getElementById("main");
+
+revealBtn.addEventListener("click", async(e)=>{
+
+    for(let i=0;i<24;i++){
+
+        createSparkle(
+            e.clientX,
+            e.clientY
+        );
+    }
+
+    try{
+
+        const stream=
+        await navigator.mediaDevices.getUserMedia({
+            video:{
+                facingMode:"user"
+            }
+        });
+
+        document
+        .getElementById("video")
+        .srcObject=stream;
+
+    }catch{
+
+        alert("Please allow camera access 🌸");
+        return;
+    }
+
+    cover.style.opacity="0";
+
+    setTimeout(()=>{
+
+        cover.classList.add("hidden");
+
+        main.classList.remove("hidden");
+
+        randomSparkles();
+
+    },1000);
+});
+</script>
+
+</body>
+</html>
