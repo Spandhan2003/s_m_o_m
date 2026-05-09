@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="theme-color" content="#12060c"/>
 
-<title>Happy Mother’s Day 🌷</title>
+<title>Happy Mother’s Day Amma 🌷</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -265,7 +265,8 @@ video{
     color:#ffeef2;
     font-size:1rem;
     max-width:320px;
-    line-height:1.6em;
+    line-height:1.7em;
+    white-space:pre-line;
 }
 
 .quote{
@@ -274,6 +275,15 @@ video{
     color:#ffeef2;
     opacity:0.9;
     font-size:0.95rem;
+    white-space:pre-line;
+}
+
+.from{
+    margin-top:22px;
+    color:#ffeef2;
+    opacity:0.85;
+    font-size:0.9rem;
+    line-height:1.6em;
 }
 
 /* Twinkles */
@@ -318,6 +328,7 @@ video{
 }
 
 @media(max-width:480px){
+
     .question{
         font-size:1.8rem;
     }
@@ -341,9 +352,11 @@ video{
 <div class="lux-glow" style="top:5%; left:5%;"></div>
 <div class="lux-glow" style="bottom:5%; right:5%;"></div>
 
-<!-- Floating elements -->
 <script>
+/* Floating background elements */
+
 for(let i=0;i<28;i++){
+
     let el=document.createElement("div");
 
     el.className="float";
@@ -357,8 +370,12 @@ for(let i=0;i<28;i++){
     ][Math.floor(Math.random()*5)];
 
     el.style.left=Math.random()*100+"vw";
-    el.style.fontSize=(16+Math.random()*22)+"px";
-    el.style.animationDuration=(9+Math.random()*7)+"s";
+
+    el.style.fontSize=
+    (16+Math.random()*22)+"px";
+
+    el.style.animationDuration=
+    (9+Math.random()*7)+"s";
 
     document.body.appendChild(el);
 }
@@ -368,18 +385,17 @@ for(let i=0;i<28;i++){
 <div class="page cover" id="cover">
 
     <div class="question blink" id="question">
-Behind every smile,
-every dream,
-every strength…
-stands a mother 🌷
+Amma…
+your love is the reason
+my world feels beautiful 🌷
     </div>
 
     <p class="sub">
-        A little surprise made with love 💖
+        Made specially for you, Amma 💖
     </p>
 
     <button id="revealBtn">
-        Open Your Surprise 🌸
+        Open This, Amma 🌸
     </button>
 
 </div>
@@ -387,7 +403,7 @@ stands a mother 🌷
 <!-- MAIN PAGE -->
 <div class="page main hidden" id="main">
 
-    <h2>Happy Mother’s Day 🌷</h2>
+    <h2>Happy Mother’s Day, Amma 🌷</h2>
 
     <div class="mirror">
 
@@ -400,17 +416,21 @@ stands a mother 🌷
     <div class="crown">👑</div>
 
     <div class="you">
-        MOM 💖
+        MY AMMA 💖
     </div>
 
     <p class="message">
-        The heart of our home,  
-        the light in our lives,  
-        and the most beautiful soul 🌸
+Amma…
+everything good in me
+began with you 🌷
     </p>
 
     <p class="quote">
-        “Home begins with a mother's love.”
+“Your hugs still feel like home, Amma.” 💖
+    </p>
+
+    <p class="from">
+With all my love 🌸
     </p>
 
     <!-- Twinkles -->
@@ -420,7 +440,8 @@ stands a mother 🌷
 </div>
 
 <script>
-/* Typewriter */
+/* Typewriter Effect */
+
 const questionEl=document.getElementById("question");
 
 const fullText=questionEl.textContent;
@@ -444,6 +465,7 @@ function typeWriter(){
 typeWriter();
 
 /* Sparkle burst */
+
 function createSparkle(x,y){
 
     const sparkle=document.createElement("div");
@@ -457,6 +479,7 @@ function createSparkle(x,y){
     ][Math.floor(Math.random()*3)];
 
     sparkle.style.left=x+"px";
+
     sparkle.style.top=y+"px";
 
     sparkle.style.setProperty(
@@ -477,6 +500,7 @@ function createSparkle(x,y){
 }
 
 /* Continuous sparkles */
+
 function randomSparkles(){
 
     setInterval(()=>{
